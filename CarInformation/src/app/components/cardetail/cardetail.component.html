@@ -7,6 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Araba</th>
       <th>Fiyatı</th>
       <th>Model Yılı</th>
       <th>Renk Adı</th>
@@ -16,11 +17,15 @@
   </thead>
   
   <tr *ngFor="let x of cardetails">
+    <td>{{x.carId}}</td>
     <td>{{ x.dailyPrice }}</td>
     <td>{{ x.modelYear }}</td>
     <td>{{ x.colorName }}</td>
     <td>{{ x.description }}</td>
     <td>{{ x.brandName }}</td>
-  </tr>
+    <td><button  routerLink="/carimages/car/{{x.carId}}"
+    class="btn btn-danger" type="button">Resim</button></td>
 
+  </tr>
+  
 </table>
