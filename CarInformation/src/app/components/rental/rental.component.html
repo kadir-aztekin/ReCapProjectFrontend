@@ -2,25 +2,21 @@
   *ngIf="dataLoaded == false"
   class="spinner-border text-warning"
   role="status"
->
-  <span class="visually-hidden">Loading...</span>
-</div>
-<table *ngIf="dataLoaded == true" class="table table-dark table-striped">
+></div>
+<table class="table table-dark table-striped">
   <thead>
     <tr>
       <th>Kiracı Id</th>
       <th>Marka Adı</th>
       <th>Kiracı Adı</th>
-      <th>Kiracı SoyAdı</th>
       <th>Kiralanma Tarihi</th>
       <th>Dönüş Tarihi</th>
     </tr>
   </thead>
   <tr *ngFor="let rental of rentals">
-    <td>{{rental.Id}}</td>
+    <td>{{rental.id}}</td>
     <td>{{ rental.brandName }}</td>
-    <td>{{ rental.firstName }}</td>
-    <td>{{ rental.lastName }}</td>
+    <td>{{ rental.userName }}</td>
     <td>{{ rental.rentDate }}</td>
     <td>{{ rental.returnDate }}</td>
   </tr>

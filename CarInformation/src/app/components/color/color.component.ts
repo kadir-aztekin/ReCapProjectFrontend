@@ -8,7 +8,8 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
-  colors:Color[] =[]
+  colors:Color[] =[];
+  currenCategory: Color;
   dataLoaded=false;
   constructor(private colorService:ColorService) { }
 
@@ -21,6 +22,21 @@ export class ColorComponent implements OnInit {
       this.dataLoaded=true;
       
     })
+  } setCurrentColor(color: Color) {
+    this.currenCategory = color;
   }
-
+  getCurrentColorClass(color: Color) {
+    if (color == this.currenCategory) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
+    }
+  }
+  getAllColorClass() {
+    if (!this.currenCategory) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
+    }
+  }
 }
