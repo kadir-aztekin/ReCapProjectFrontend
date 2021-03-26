@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CarDetail } from '../models/cardetail';
 import { ListResponseModel } from '../models/listResponseModel';
+import {Car} from "../models/car"
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +24,9 @@ export class CarService {
     if (status !== undefined) {newPath += 'status=' + status + '&';}
 
     return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
+  }
+  add(car:Car):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
+
   }
 }
