@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { CarimagesComponent } from './components/carimages/carimages.component';
+import { CarsComponent } from './components/cars/cars.component';
 import { CardetailService } from './services/cardetail.service';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"carimages/car/:carId",component:CarimagesComponent},
   {path:"cardetails/color/:colorId/carimages/car/:carId",component:CarimagesComponent},
   {path:"cardetails/brand/:brandId/carimages/car/:carId",component:CarimagesComponent},
+  {path:"cars",component:CarsComponent},
   
 ];
 

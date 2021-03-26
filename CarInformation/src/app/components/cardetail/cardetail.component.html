@@ -1,3 +1,10 @@
+<div class="mb-3">
+  <label for="filterText" class="form-label">Ürün Ara</label>
+  <input type="text"  [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama İfadesi Giriniz ">
+</div>
+<div  *ngIf="filterText.length>2" class="alert alert-primary">
+{{filterText}} Aradınız 
+</div>
 
 <div
   *ngIf="dataLoaded == false"
@@ -14,9 +21,9 @@
       <th>Acıklama</th>
       <th>Ürün Adı</th>
     </tr>
-  </thead>
+  </thead> 
   
-  <tr *ngFor="let x of cardetails">
+  <tr *ngFor="let x of cardetails | filterPipe:filterText">
     <td>{{x.carId}}</td>
     <td>{{ x.dailyPrice }}</td>
     <td>{{ x.modelYear }}</td>
