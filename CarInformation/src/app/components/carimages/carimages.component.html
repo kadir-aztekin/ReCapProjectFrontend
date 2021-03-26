@@ -8,6 +8,7 @@
         <img src="https://localhost:44350/images/{{image.imagePath}}" class="d-block w-100" alt="image.imagePath">
          
    </div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -19,3 +20,16 @@
     </button>
    
   </div>  
+  <div *ngIf="cardetail" class="col-lg-6 my-auto">
+    <h1>{{ cardetail.brandName }}</h1>
+    <hr style="width: 25%; opacity: 1; height: 2px">
+    <ul class="list-unstyled">
+       <li><h5><b>Model Name: </b>{{ cardetail.description }}, {{ cardetail.brandName }}</h5></li>
+       <li><h5><b>Color Name: </b>{{ cardetail.colorName }}</h5></li>
+       <li><h5><b>Model Year: </b>{{ cardetail.modelYear }}</h5></li>
+       <li><h5><b>Günlük Ücret: </b>{{cardetail.dailyPrice }} ₺</h5></li>
+    </ul>
+    <button class="btn btn-primary rounded-0 px-4" >
+       Kirala
+    </button>
+ </div>

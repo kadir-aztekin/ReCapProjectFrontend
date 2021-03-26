@@ -15,13 +15,14 @@ import { RentalComponent } from './components/rental/rental.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { CarimagesComponent } from './components/carimages/carimages.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
-import { CarsComponent } from './components/cars/cars.component';
 import { CarFilterPipe } from './pipes/car-filter.pipe';
 import { CarAddComponent } from './components/car-add/car-add.component';
 
 import {ToastrModule} from "ngx-toastr";
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { CarComponent } from './components/car/car.component';
+import { CarFilterComponent } from './components/car/car-filter/car-filter.component';
 
 
 @NgModule({
@@ -36,11 +37,12 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
     
     CarimagesComponent,
     FilterPipePipe,
-    CarsComponent,
     CarFilterPipe,
     CarAddComponent,
     ColorAddComponent,
     BrandAddComponent,
+    CarComponent,
+    CarFilterComponent,
     
   ],
   imports: [

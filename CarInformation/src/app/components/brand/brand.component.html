@@ -1,12 +1,38 @@
-<h5>Markalar</h5>
-<ul class="list-group">
-  <li [class]="getAllBrandClass()" routerLink="/cardetails">Tüm Ürünler</li>
-  <li (click) ="setCurrentBrand(brand)"
-  routerLink="/cardetails/brand/{{brand.brandId}}"
-  *ngFor="let brand of brands" 
-  [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
-</ul>
+<div class="row mt-4">
+  <div class="col-lg-9">
+     <table class="table table-hover table-striped border">
+        <thead>
+        <tr>
+           <th class="text-center" style="width: 50px">#</th>
+           <th>Marka</th>
+           <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let brand of brands ">
+           <th class="text-center">{{ brand.brandId }}</th>
+           <td>{{ brand.brandName }}</td>
+           <td class="text-end">
+              <button class="btn btn-sm btn-primary rounded-0 px-4"
+                      routerLink="/brands/update/{{ brand.brandId }}">
+                 <i class="bi-pencil me-1"></i> GÜNCELLE
+              </button>
+           </td>
+        </tr>
+        </tbody>
+     </table>
+  </div>
 
-  
+  <div class="col-lg-3">
 
-  
+     <input type="text" [(ngModel)]="filterText" class="form-control rounded-0 mb-3"
+            placeholder="Marka Ara..." autocomplete="off">
+
+     <div class="d-grid">
+        <button class="btn btn-primary rounded-0" routerLink="/brands/add">
+           <i class="bi-plus-square me-1"></i> Yeni Marka Ekle
+        </button>
+     </div>
+  </div>
+</div>
+© 2021 GitHub, Inc.
